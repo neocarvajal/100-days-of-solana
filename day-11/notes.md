@@ -1,4 +1,4 @@
-# Compare accounts vs databases\
+# Compare accounts vs databases
 
 ## Step 1: Inspect your own wallet account
 
