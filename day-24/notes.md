@@ -1,2 +1,0 @@
-# Decode account data
-
