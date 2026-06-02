@@ -4,3 +4,8 @@ Today, you are going to change that. You will build a simple command-line accoun
 
 Think of it as your own mini Solscan, running right in your terminal.
 
+![myaddress](mywallet-address.png)
+
+![metaplex](metaplex-address.png)
+
+
