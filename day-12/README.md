@@ -4,3 +4,5 @@ Query the same address on both devnet and mainnet. Compare the balance and recen
 
 create a new file called compare-networks.mjs and use the contents of this gist: https://gist.github.com/matthewrevell/50c97f5d75a52200f14e92392d93a215
 
+
+![compare](image_processing20260529-41-bdglo3.png)
