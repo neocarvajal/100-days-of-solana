@@ -5,7 +5,7 @@
 Generate a fresh keypair with zero SOL balance. This wallet has never received an airdrop, so it can’t pay for anything.
 
 ```
-solana-keygen new --outfile /tmp/broke-wallet.json --no-bip39-passphrase --force
+solana-keygen new --outfile broke-wallet.json --no-bip39-passphrase --force
 ```
 
 ## 2. Try to send SOL from an empty wallet
@@ -13,7 +13,7 @@ solana-keygen new --outfile /tmp/broke-wallet.json --no-bip39-passphrase --force
 Attempt a transfer using your broke wallet as the fee payer. This will fail because the wallet has no SOL to cover the fee. The CLI catches this locally before the transaction reaches the network.
 
 ```
-solana transfer --keypair /tmp/broke-wallet.json $(solana address) 1 --url devnet --allow-unfunded-recipient
+solana transfer --keypair broke-wallet.json $(solana address) 1 --url devnet --allow-unfunded-recipient
 ```
 
 You should see an error in the output. Note the error message carefully.
@@ -24,7 +24,7 @@ Switch back to your funded devnet wallet. Make sure it has some SOL (airdrop if 
 
 ```
 solana airdrop 1 --url devnet
-solana transfer $(solana-keygen pubkey /tmp/broke-wallet.json) 500 --url devnet --allow-unfunded-recipient
+solana transfer $(solana-keygen pubkey broke-wallet.json) 500 --url devnet --allow-unfunded-recipient
 ```
 
 Your wallet can pay the fee but not the 500 SOL transfer. The CLI shows the same “insufficient funds” error as step 2 because its local check lumps both cases together. Step 4 bypasses that check to show the on-chain difference.
@@ -54,6 +54,8 @@ Use solana confirm -v to get a detailed breakdown of the failed transaction.
 solana confirm -v 4guFrUJMYCjKrPaaEGyYHnbAH1yMgmuyEbHK9phWtE8NjsoXQXxCHpXGfK7j3mKbpvUS2UY62vaJikUwm8oqLsGU --url devnet
 ```
 
+![failed transaction](3-FailTransaction.png)
+
 Study the output. You’ll see:
 
 Status: an error message describing what went wrong
@@ -68,6 +70,8 @@ Open your browser and navigate to:
 ```
 https://explorer.solana.com/tx/4guFrUJMYCjKrPaaEGyYHnbAH1yMgmuyEbHK9phWtE8NjsoXQXxCHpXGfK7j3mKbpvUS2UY62vaJikUwm8oqLsGU?cluster=devnet
 ```
+
+![failed transaction](3-FailTransaction.png)
 
 The Explorer displays the same information in a visual format: the error, the program logs, the accounts involved, and the balance changes. Compare this view with the CLI output. Notice how the Explorer highlights the failing instruction in red and shows exactly which program returned the error.
 
