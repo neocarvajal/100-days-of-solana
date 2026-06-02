@@ -8,3 +8,7 @@ GzwRa3Sdv3uST5mh2x8hwBHY1DncYTeD3f6M36wNMSz3
 
 ## Execute transfer
 node transfer.mjs GzwRa3Sdv3uST5mh2x8hwBHY1DncYTeD3f6M36wNMSz3 0.05
+
+## Transaction Status
+
+![SOL and LAMPORTS](tracks-transaction.png)
