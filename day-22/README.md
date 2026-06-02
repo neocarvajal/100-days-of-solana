@@ -24,6 +24,8 @@ Now inspect your own wallet account:
 solana account $(solana address)
 ```
 
+![solana account](solana-account.png)
+
 You should see output that looks something like this:
 
 ```
@@ -58,5 +60,7 @@ For a richer view, try inspecting your wallet account in JSON format:
 ```
 solana account $(solana address) --output json
 ```
+
+![solana account](solana-account-json.png)
 
 This gives you machine-readable output with the same fields: lamports, data, owner, executable, and rentEpoch. You can also paste your wallet address into the Solana Explorer to see the same information in a visual interface.
