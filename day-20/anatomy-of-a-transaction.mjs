@@ -177,9 +177,7 @@ async function main() {
 	// Get Blockhash
 	// -------------------------------------------------------------------------
 
-	const {
-		value: latestBlockhash,
-	} = await rpc
+	const { value: latestBlockhash } = await rpc
 		.getLatestBlockhash()
 		.send();
 
