@@ -2,6 +2,8 @@
 
 ## Step 1: Inspect your own wallet account
 
+![solana account diff bd](solana-account-diff.png)
+
 ## Every wallet on Solana is an account. Let’s look at yours. Run the following command to get your wallet’s public key:
 
 ```
@@ -24,7 +26,7 @@ solana account TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
 
 ## Build your comparison table
 
-https://dev.to/neocarvajal/comparing-databases-vs-solana-accounts-2le7
+### Blog Post: https://dev.to/neocarvajal/comparing-databases-vs-solana-accounts-2le7
 
 ## Check the rent-exempt cost for a data account
 
