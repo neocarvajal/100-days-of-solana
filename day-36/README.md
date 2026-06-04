@@ -1,7 +1,5 @@
 # Create an Interest-Bearing Token on Solana
 
-![Banner Post](Token2022Link.png)
-
 ## New token mint with the interest-bearing extension enabled
 
 spl-token create-token \
