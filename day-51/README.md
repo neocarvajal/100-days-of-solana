@@ -129,4 +129,14 @@ spl-token withdraw-withheld-tokens $MY_TA $RECIPIENT_TA
 Result Signature: NNRDgstokty32bycBxtqGtiqYVVuw4SrTSU5kKSpVGYucwN9sQmgKypR3LzCw1uT8wTyCmbyiDzgwnSruvswx5n
 ```
 
+Confirm the loop closed. The recipient’s withheld amount should now be zero, and your own balance should reflect the 10 tokens you just reclaimed:
 
+```javascript
+spl-token display $RECIPIENT_TA
+spl-token balance $MINT
+```
+
+spl-token create-account $MINT --owner $RECIPIENT --fee-payer ~/.config/solana/id.json
+spl-token transfer --expected-fee 10 $MINT 1000 $RECIPIENT --allow-unfunded-recipient
+spl-token display $RECIPIENT_TA
+spl-token withdraw-withheld-tokens $MY_TA $RECIPIENT_TA
